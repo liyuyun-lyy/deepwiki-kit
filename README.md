@@ -1,6 +1,6 @@
-# deepwiki-kit
+# deepwiki
 
-Deepwiki skill and specification kit for generating repository documentation via Codex CLI.
+Deepwiki skill and specification kit for generating repository documentation via Codex CLI and Claude Code.
 
 ## What this repo contains
 
@@ -10,9 +10,10 @@ Deepwiki skill and specification kit for generating repository documentation via
 
 ## How to use (Codex CLI)
 
-Use `$deepwiki` to generate or update deepwiki content in a target repo. The
-model detects whether this is the first run or an incremental update and
-proceeds accordingly.
+Copy `skills/deepwiki` into your `~/.codex/skills/` directory, then use
+`$deepwiki` to generate or update deepwiki content in a target repo. The model
+detects whether this is the first run or an incremental update and proceeds
+accordingly.
 
 The skill writes all output under `deepwiki/` in the target repository.
 
@@ -22,8 +23,13 @@ The INDEX is generated dynamically based on repository structure and content.
 
 This repo ships a Claude Code plugin manifest that points to the deepwiki skill.
 
-- Add the plugin: `/plugin add .` (or `/plugin add liyuyun-lyy/deepwiki`).
+- Add the marketplace: `/plugin marketplace add liyuyun-lyy/deepwiki`
+- Install the plugin: `/plugin install deepwiki@deepwiki`
 - Run the command: `/deepwiki`
+
+## Supported clients
+
+This repository supports both Codex CLI skills and Claude Code plugins.
 
 ## Image and Mermaid support
 
