@@ -10,12 +10,9 @@ Deepwiki skill and specification kit for generating repository documentation via
 
 ## How to use (Codex CLI)
 
-Use these commands to generate or update deepwiki content in a target repo:
-
-- `/deepwiki`: Full run (init if missing, then update pages and index)
-- `/deepwiki:init`: Create base structure and starter pages
-- `/deepwiki:index`: Regenerate `deepwiki/INDEX.md`
-- `/deepwiki:update`: Update existing pages without deleting user sections
+Use `/deepwiki` to generate or update deepwiki content in a target repo. The
+model detects whether this is the first run or an incremental update and
+proceeds accordingly.
 
 The skill writes all output under `deepwiki/` in the target repository.
 
