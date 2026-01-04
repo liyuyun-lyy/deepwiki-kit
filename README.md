@@ -2,10 +2,6 @@
 
 Deepwiki skill and specification kit for generating repository documentation via Codex CLI.
 
-## License
-
-MIT. See `LICENSE`.
-
 ## What this repo contains
 
 - `skills/deepwiki/`: The deepwiki skill definition, templates, and examples.
@@ -14,7 +10,7 @@ MIT. See `LICENSE`.
 
 ## How to use (Codex CLI)
 
-Use `/deepwiki` to generate or update deepwiki content in a target repo. The
+Use `$deepwiki` to generate or update deepwiki content in a target repo. The
 model detects whether this is the first run or an incremental update and
 proceeds accordingly.
 
@@ -31,3 +27,7 @@ The INDEX is generated dynamically based on repository structure and content.
 
 - This repository focuses on skill behavior, templates, and specs, not the CLI implementation.
 - Update the skill docs and examples whenever user-visible behavior changes.
+
+## License
+
+MIT. See `LICENSE`.
