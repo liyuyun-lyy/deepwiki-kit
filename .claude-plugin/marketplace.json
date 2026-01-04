@@ -1,5 +1,5 @@
 {
-  "name": "deepwiki-kit",
+  "name": "deepwiki",
   "owner": {
     "name": "liyuyun-lyy"
   },
@@ -9,7 +9,7 @@
   },
   "plugins": [
     {
-      "name": "deepwiki-kit",
+      "name": "deepwiki",
       "source": ".",
       "description": "Deepwiki documentation generator skill for Claude Code."
     }
