@@ -31,6 +31,12 @@ The skill writes all output under `deepwiki/` in the target repository.
 
 The INDEX is generated dynamically based on repository structure and content.
 
+## 🧾 Generation metadata
+
+Deepwiki generation writes `deepwiki/GENERATION.md` with the latest commit hash,
+branch name (when available), and a local timestamp. This metadata is linked from
+`deepwiki/INDEX.md` and is used as a reference for incremental updates.
+
 ## 🖼️ Image and Mermaid support
 
 - Local images are referenced with project-relative paths and copied into `deepwiki/assets/`.
