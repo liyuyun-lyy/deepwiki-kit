@@ -81,7 +81,8 @@
   ACTION REQUIRED: The content in this section represents placeholders.
   Fill them out with the right functional requirements.
   Include constitution-driven requirements for command workflow, config safety,
-  deterministic generation with citations, and deepwiki.org parity.
+  deterministic generation with citations, deepwiki.org parity, and skill doc
+  updates when behavior changes.
 -->
 
 ### Functional Requirements

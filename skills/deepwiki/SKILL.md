@@ -1,0 +1,156 @@
+---
+name: deepwiki
+description: Generate or update a repository understanding deepwiki as Markdown, including a fixed index and directory (INDEX.md and TOC.md) under deepwiki/. Use when users ask for /deepwiki, /deepwiki:init, /deepwiki:index, /deepwiki:update, or request a repo deepwiki/knowledge base.
+---
+
+# Deepwiki Generator
+
+Create a Markdown-based deepwiki for a code repository. Always write files under `deepwiki/`.
+
+## Commands and intent
+
+- `/deepwiki` or "generate deepwiki": full run (init if missing, then update pages and index).
+- `/deepwiki:init`: create the base structure and starter pages.
+- `/deepwiki:index`: only regenerate `deepwiki/INDEX.md` and `deepwiki/TOC.md`.
+- `/deepwiki:update`: update existing pages to match current repo state without deleting user-added sections.
+
+## Output structure (fixed)
+
+Always ensure these exist:
+
+- `deepwiki/INDEX.md` - landing page summary and entry links.
+- `deepwiki/TOC.md` - hierarchical table of contents.
+
+Recommended pages (create as needed):
+
+- `deepwiki/overview.md`
+- `deepwiki/architecture.md`
+- `deepwiki/modules/<module>.md`
+- `deepwiki/dependencies.md`
+- `deepwiki/data-flow.md`
+- `deepwiki/glossary.md`
+
+## Templates and examples
+
+Use the templates in `templates/` for page structure and the samples in
+`examples/` for tone and formatting. Templates define required sections and
+minimum content expectations.
+
+Templates:
+- `templates/overview.md`
+- `templates/architecture.md`
+- `templates/dependencies.md`
+- `templates/data-flow.md`
+- `templates/module.md`
+- `templates/glossary.md`
+
+Examples:
+- `examples/overview-example.md`
+- `examples/architecture-example.md`
+- `examples/dependencies-example.md`
+- `examples/data-flow-example.md`
+- `examples/module-example.md`
+- `examples/glossary-example.md`
+
+## Workflow
+
+1) Scan the repo:
+   - Identify primary languages, entry points, build tools, and key directories.
+   - Capture module boundaries (top-level packages, services, libs).
+   - Note key files: README, build config, main entrypoints, API specs, etc.
+
+2) Draft content:
+   - Keep it concise, factual, and link to code locations.
+   - Prefer short sections with bullet points over long prose.
+   - Include "How to navigate" and "Where to start" guidance.
+
+3) Write or update pages:
+   - For `/deepwiki:init`, create the recommended pages with placeholders.
+   - For `/deepwiki:update`, preserve existing headings and add deltas.
+
+4) Regenerate index and toc:
+   - `INDEX.md` should summarize the repo and link to all core pages.
+   - `TOC.md` should list all deepwiki pages in a logical hierarchy.
+
+## Page layout requirements
+
+Each page MUST follow its template structure and include a "Source References"
+section listing the relevant paths.
+
+**Update Notes format** (use when modifying existing pages):
+
+```
+## Update Notes
+- YYYY-MM-DD: Short summary of what changed and why.
+```
+
+## Minimum content checklist
+
+- Overview: purpose, repo layout, entry points, and navigation guidance.
+- Architecture: components, key flows, and interfaces/contracts.
+- Dependencies: build/runtime deps, external services, and dev tools.
+- Data Flow: primary flows with inputs/outputs and storage/state.
+- Modules: responsibilities, key files, public interfaces, and tests.
+- Glossary: key terms used across docs or code.
+
+## Source citation rules
+
+- Use "Source References" at the end of each page.
+- List paths as bullet points, e.g., `- src/app/main.ts`.
+- If a claim lacks evidence, add a TODO note in the section.
+
+## Index template
+
+Use this structure for `deepwiki/INDEX.md`:
+
+```
+# Deepwiki Index
+
+## Summary
+- Purpose:
+- Tech stack:
+- Entry points:
+- Where to start:
+- How to navigate:
+
+## Start Here
+- [Overview](overview.md)
+- [Architecture](architecture.md)
+
+## Guides
+- [Dependencies](dependencies.md)
+- [Data Flow](data-flow.md)
+
+## Modules
+- [Module A](modules/module-a.md)
+- [Module B](modules/module-b.md)
+
+## Glossary
+- [Glossary](glossary.md)
+```
+
+## TOC template
+
+Use this structure for `deepwiki/TOC.md`:
+
+```
+# Deepwiki TOC
+
+- Overview
+  - [Overview](overview.md)
+  - [Architecture](architecture.md)
+- Guides
+  - [Dependencies](dependencies.md)
+  - [Data Flow](data-flow.md)
+- Modules
+  - [Module A](modules/module-a.md)
+  - [Module B](modules/module-b.md)
+- Glossary
+  - [Glossary](glossary.md)
+```
+
+## Update rules
+
+- Keep links relative to `deepwiki/`.
+- Avoid deleting user-added sections; append with "Update" subsections if unsure.
+- Prefer stable filenames; only add new module pages when a new module is discovered.

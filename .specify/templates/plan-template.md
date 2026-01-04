@@ -38,6 +38,7 @@
 - Init config updates are safe and reversible; no silent overwrites.
 - Generated content is deterministic and source-anchored with citations.
 - Output includes deepwiki.org parity sections and a validation checklist.
+- Deepwiki skill docs and examples are updated for any behavior changes.
 
 ## Project Structure
 

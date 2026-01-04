@@ -1,10 +1,8 @@
 <!--
 Sync Impact Report
-- Version change: N/A (template) -> 0.1.0
-- Modified principles: N/A (template) -> Spec-Kit Compatible Workflow; Incremental CLI Commands;
-  Config-Driven Initialization; Deterministic, Source-Anchored Generation;
-  Quality Parity with deepwiki.org
-- Added sections: Scope & Deliverables; Workflow & Quality Gates
+- Version change: 0.1.0 -> 0.2.0
+- Modified principles: Added Continuous Skill Evolution
+- Added sections: None
 - Removed sections: None
 - Templates requiring updates:
   - ✅ .specify/templates/plan-template.md
@@ -53,6 +51,12 @@ contract summaries, and usage guides as applicable. A validation checklist MUST
 be produced to confirm coverage and highlight gaps. Rationale: output quality
 defines adoption and credibility.
 
+### VI. Continuous Skill Evolution
+The deepwiki skill definition and supporting assets MUST stay synchronized with
+actual CLI behavior, templates, and expected outputs. Any behavior change MUST
+update the skill documentation and examples before release. Rationale: users
+depend on the skill as the authoritative workflow and it must remain current.
+
 ## Scope & Deliverables
 The kit MUST deliver a documented installation flow, an init command that wires
 Codex configuration, and CLI commands to index, generate, and update deepwiki
@@ -78,4 +82,4 @@ changes, MINOR for new principles or requirements, PATCH for clarifications.
 All PRs MUST include a Constitution Check in the plan or checklist, and reviews
 MUST confirm compliance before merge.
 
-**Version**: 0.1.0 | **Ratified**: TODO(RATIFICATION_DATE): original adoption date not recorded | **Last Amended**: 2026-01-04
+**Version**: 0.2.0 | **Ratified**: TODO(RATIFICATION_DATE): original adoption date not recorded | **Last Amended**: 2026-01-04

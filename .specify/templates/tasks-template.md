@@ -54,6 +54,7 @@ description: "Task list template for feature implementation"
 - [ ] T00X Implement Codex command wiring for `/deepwiki` and subcommands
 - [ ] T00X Implement init config writer with safe merge behavior
 - [ ] T00X Implement indexing + generation pipeline with source citations
+- [ ] T00X Update deepwiki skill docs/examples to match behavior changes
 
 ---
 
