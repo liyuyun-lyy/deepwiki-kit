@@ -1,4 +1,4 @@
-# 🧭 deepwiki
+# deepwiki
 
 Deepwiki skill and specification kit for generating repository documentation via Codex CLI and Claude Code.
 
