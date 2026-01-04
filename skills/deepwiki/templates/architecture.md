@@ -12,8 +12,8 @@
 - [Critical request or job paths]
 
 ## Diagrams
-- Include local images for architecture and flow diagrams.
-- Use relative paths under `assets/` with meaningful alt text.
+- Include at least one mermaid diagram for architecture or key flows.
+- Use local images only when they are already present; otherwise prefer mermaid.
 - Preserve mermaid blocks directly in Markdown when diagrams are authored in mermaid.
 
 ## Interfaces and Contracts

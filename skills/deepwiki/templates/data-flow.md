@@ -14,8 +14,8 @@
 - Outputs: [artifacts, responses, side effects]
 
 ## Diagrams
-- Include local images for key flows.
-- Use relative paths under `assets/` with meaningful alt text.
+- Include at least one mermaid diagram for key flows.
+- Use local images only when they are already present; otherwise prefer mermaid.
 - Preserve mermaid blocks directly in Markdown when diagrams are authored in mermaid.
 
 ## State and Storage

@@ -33,6 +33,9 @@ Recommended pages (create as needed):
   `deepwiki/assets/` in the generated output.
 - Preserve mermaid diagram blocks in Markdown so compatible renderers can
   render them inline.
+- Always include at least one mermaid diagram in pages that have a Diagrams
+  section; if none is obvious, add a simple placeholder diagram and mark it
+  with a TODO for refinement.
 - Use deterministic filenames for copied local images (consistent for the same
   source page and reference order).
 - Preserve alt text or captions from the source content.
@@ -107,6 +110,7 @@ section listing the relevant paths.
 - Data Flow: primary flows with inputs/outputs and storage/state.
 - Modules: responsibilities, key files, public interfaces, and tests.
 - Glossary: key terms used across docs or code.
+- Diagrams: include at least one mermaid diagram when a Diagrams section exists.
 
 ## Source citation rules
 

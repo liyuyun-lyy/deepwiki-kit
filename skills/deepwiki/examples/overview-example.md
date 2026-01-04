@@ -29,6 +29,13 @@
   - Editor Service and Groups
   - Action and Menu System
 
+## Diagrams
+```mermaid
+flowchart LR
+  Repo[Repository] --> Index[Dynamic INDEX]
+  Index --> Pages[Deepwiki Pages]
+```
+
 ## Missing Image Reporting
 - Missing image: `docs/architecture.md` → `assets/mermaid3.jpg` (blocked: path escapes repo root)
 
