@@ -14,10 +14,12 @@ Use these commands to generate or update deepwiki content in a target repo:
 
 - `/deepwiki`: Full run (init if missing, then update pages and index)
 - `/deepwiki:init`: Create base structure and starter pages
-- `/deepwiki:index`: Regenerate `deepwiki/INDEX.md` and `deepwiki/TOC.md`
+- `/deepwiki:index`: Regenerate `deepwiki/INDEX.md`
 - `/deepwiki:update`: Update existing pages without deleting user sections
 
 The skill writes all output under `deepwiki/` in the target repository.
+
+The INDEX is generated dynamically based on repository structure and content.
 
 ## Image and Mermaid support
 

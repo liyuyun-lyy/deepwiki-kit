@@ -16,7 +16,18 @@
 - Run `/deepwiki:index` to build the initial index.
 
 ## How to Navigate
-- Start with `deepwiki/INDEX.md`, then follow module links.
+- Start with `deepwiki/INDEX.md`, then follow module links grouped by theme.
+
+## Index Structure
+- Build & Development
+  - Package Structure and Dependencies
+  - Build Tasks and Scripts
+- Architecture
+  - Application Lifecycle and Bootstrap
+  - Service Initialization and Dependency Injection
+- Modules
+  - Editor Service and Groups
+  - Action and Menu System
 
 ## Missing Image Reporting
 - Missing image: `docs/architecture.md` → `assets/mermaid3.jpg` (blocked: path escapes repo root)

@@ -1,6 +1,6 @@
 ---
 name: deepwiki
-description: Generate or update a repository understanding deepwiki as Markdown, including a fixed index and directory (INDEX.md and TOC.md) under deepwiki/. Use when users ask for /deepwiki, /deepwiki:init, /deepwiki:index, /deepwiki:update, or request a repo deepwiki/knowledge base.
+description: Generate or update a repository understanding deepwiki as Markdown, including a dynamic INDEX.md under deepwiki/. Use when users ask for /deepwiki, /deepwiki:init, /deepwiki:index, /deepwiki:update, or request a repo deepwiki/knowledge base.
 ---
 
 # Deepwiki Generator
@@ -9,17 +9,13 @@ Create a Markdown-based deepwiki for a code repository. Always write files under
 
 ## Commands and intent
 
-- `/deepwiki` or "generate deepwiki": full run (init if missing, then update pages and index).
-- `/deepwiki:init`: create the base structure and starter pages.
-- `/deepwiki:index`: only regenerate `deepwiki/INDEX.md` and `deepwiki/TOC.md`.
-- `/deepwiki:update`: update existing pages to match current repo state without deleting user-added sections.
+- `/deepwiki` or "generate deepwiki": run the full flow; the model detects whether this is the first run or an update and proceeds accordingly.
 
 ## Output structure (fixed)
 
 Always ensure these exist:
 
 - `deepwiki/INDEX.md` - landing page summary and entry links.
-- `deepwiki/TOC.md` - hierarchical table of contents.
 - `deepwiki/assets/` - local images and rendered diagram assets.
 
 Recommended pages (create as needed):
@@ -78,8 +74,8 @@ Examples:
    - Include "How to navigate" and "Where to start" guidance.
 
 3) Write or update pages:
-   - For `/deepwiki:init`, create the recommended pages with placeholders.
-   - For `/deepwiki:update`, preserve existing headings and add deltas.
+   - On first run, create the recommended pages with placeholders.
+   - On subsequent runs, preserve existing headings and add deltas.
 
 4) Render images and diagrams:
    - Copy local images referenced by content into `deepwiki/assets/`.
@@ -87,8 +83,9 @@ Examples:
    - Insert image references inline with alt text.
 
 5) Regenerate index and toc:
+5) Regenerate index:
    - `INDEX.md` should summarize the repo and link to all core pages.
-   - `TOC.md` should list all deepwiki pages in a logical hierarchy.
+   - Group entries dynamically based on repo structure and content.
 
 ## Page layout requirements
 
@@ -117,7 +114,14 @@ section listing the relevant paths.
 - List paths as bullet points, e.g., `- src/app/main.ts`.
 - If a claim lacks evidence, add a TODO note in the section.
 
-## Index template
+## Dynamic INDEX rules
+
+- Sections are derived from detected repository structure and deepwiki pages.
+- Omit empty sections; never include placeholders with no entries.
+- Use deterministic ordering for sections and entries across runs.
+- Ensure every generated deepwiki page appears in the INDEX.
+
+## Index template (example when applicable)
 
 Use this structure for `deepwiki/INDEX.md`:
 
@@ -145,26 +149,6 @@ Use this structure for `deepwiki/INDEX.md`:
 
 ## Glossary
 - [Glossary](glossary.md)
-```
-
-## TOC template
-
-Use this structure for `deepwiki/TOC.md`:
-
-```
-# Deepwiki TOC
-
-- Overview
-  - [Overview](overview.md)
-  - [Architecture](architecture.md)
-- Guides
-  - [Dependencies](dependencies.md)
-  - [Data Flow](data-flow.md)
-- Modules
-  - [Module A](modules/module-a.md)
-  - [Module B](modules/module-b.md)
-- Glossary
-  - [Glossary](glossary.md)
 ```
 
 ## Update rules

@@ -3,6 +3,7 @@
 Auto-generated from all feature plans. Last updated: 2026-01-04
 
 ## Active Technologies
+- Files (Markdown output and index artifacts) (001-dynamic-toc)
 
 - N/A (spec-only repository; implementation resides elsewhere) (001-image-support)
 
@@ -22,6 +23,7 @@ tests/
 N/A (spec-only repository; implementation resides elsewhere): Follow standard conventions
 
 ## Recent Changes
+- 001-dynamic-toc: Added N/A (spec-only repository; implementation resides elsewhere)
 
 - 001-image-support: Added N/A (spec-only repository; implementation resides elsewhere)
 

@@ -2,6 +2,7 @@
 
 ## Primary Flows
 - [Flow name]: [1 sentence summary]
+- [Note which INDEX section this page appears under]
 
 ## Step-by-Step
 1. [Input/event]

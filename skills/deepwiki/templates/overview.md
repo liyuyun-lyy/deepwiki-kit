@@ -18,6 +18,7 @@
 ## How to Navigate
 - [How modules are organized]
 - [How to find key flows]
+- [How the dynamic INDEX groups sections for this repo]
 
 ## Source References
 - [path/to/source]
