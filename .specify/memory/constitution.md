@@ -1,50 +1,81 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report
+- Version change: N/A (template) -> 0.1.0
+- Modified principles: N/A (template) -> Spec-Kit Compatible Workflow; Incremental CLI Commands;
+  Config-Driven Initialization; Deterministic, Source-Anchored Generation;
+  Quality Parity with deepwiki.org
+- Added sections: Scope & Deliverables; Workflow & Quality Gates
+- Removed sections: None
+- Templates requiring updates:
+  - ✅ .specify/templates/plan-template.md
+  - ✅ .specify/templates/spec-template.md
+  - ✅ .specify/templates/tasks-template.md
+  - ✅ .specify/templates/checklist-template.md
+- Follow-up TODOs:
+  - TODO(RATIFICATION_DATE): original adoption date not recorded
+-->
+# deepwiki-kit Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Spec-Kit Compatible Workflow
+Every workflow and artifact MUST align with spec-kit conventions (command naming,
+template usage, and feature lifecycle). The kit MUST remain interoperable with
+spec-kit-style prompts and templates unless a breaking change is explicitly
+ratified. Rationale: users should be able to reuse spec-kit habits and assets
+without relearning the flow.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Incremental CLI Commands
+The Codex CLI MUST expose `/deepwiki` and progressive subcommands such as
+`/deepwiki:index`, `/deepwiki:init`, and `/deepwiki:update`. Each command MUST be
+idempotent, composable, and safe to run repeatedly; `/deepwiki:index` MUST
+produce the inputs required for `/deepwiki:init` and `/deepwiki:update`.
+Rationale: users need a predictable, stepwise path for indexing, generation, and
+updates.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Config-Driven Initialization
+Initialization MUST add or update Codex configuration automatically with clear,
+reversible changes and no silent overwrites. If existing config is present, the
+init flow MUST merge safely or require explicit confirmation. Rationale: safe,
+repeatable onboarding is required for a kit meant to be installed by end users.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Deterministic, Source-Anchored Generation
+Deepwiki output MUST be derived from repository sources and MUST cite the source
+paths that support each generated section. The generator MUST be deterministic
+given the same repository snapshot and configuration; missing information MUST
+be surfaced as TODOs instead of invented content. Rationale: trust and
+repeatability are core to documentation generation.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Quality Parity with deepwiki.org
+Generated content MUST target the structure and clarity of deepwiki.org,
+including an index, architecture overview, module or service breakdowns, API or
+contract summaries, and usage guides as applicable. A validation checklist MUST
+be produced to confirm coverage and highlight gaps. Rationale: output quality
+defines adoption and credibility.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Scope & Deliverables
+The kit MUST deliver a documented installation flow, an init command that wires
+Codex configuration, and CLI commands to index, generate, and update deepwiki
+content. Output MUST be written to a single, documented root (for example,
+`deepwiki/` or `docs/deepwiki/`) and updates MUST be applied in place with clear
+diffs. The generator MUST operate on local repository content by default and
+MUST NOT require network access unless explicitly configured.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## Workflow & Quality Gates
+Development MUST follow the sequence: install kit → run init → run
+`/deepwiki:index` → run `/deepwiki:init` → iterate with `/deepwiki:update`.
+Each generation run MUST emit a summary of inputs, outputs, and any TODOs.
+Before release, validate that: command re-runs are idempotent, configuration
+changes are safe, and generated content includes source citations and parity
+sections. Any deviations from the constitution MUST be documented in the plan's
+Constitution Check and reviewed.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+This constitution supersedes all other development guidance. Amendments MUST be
+proposed via PR, include a rationale and migration notes, and receive maintainer
+approval. Versioning follows semantic versioning: MAJOR for breaking governance
+changes, MINOR for new principles or requirements, PATCH for clarifications.
+All PRs MUST include a Constitution Check in the plan or checklist, and reviews
+MUST confirm compliance before merge.
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
-
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 0.1.0 | **Ratified**: TODO(RATIFICATION_DATE): original adoption date not recorded | **Last Amended**: 2026-01-04

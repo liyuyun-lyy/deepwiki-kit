@@ -51,6 +51,9 @@ description: "Task list template for feature implementation"
 - [ ] T001 Create project structure per implementation plan
 - [ ] T002 Initialize [language] project with [framework] dependencies
 - [ ] T003 [P] Configure linting and formatting tools
+- [ ] T00X Implement Codex command wiring for `/deepwiki` and subcommands
+- [ ] T00X Implement init config writer with safe merge behavior
+- [ ] T00X Implement indexing + generation pipeline with source citations
 
 ---
 
